@@ -1,0 +1,13 @@
+# The most basic form of data verification. Write the device randomly
+# in 4K chunks, then read it back and verify the contents.
+[Random_read(multiple_IO)]
+rw=randread
+bs=4k
+iodepth=32
+direct=0
+thread=1
+filename=D:
+time_based
+name=Random_read(multiple_IO)
+size=2g
+runtime=1200

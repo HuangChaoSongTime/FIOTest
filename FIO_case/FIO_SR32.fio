@@ -1,0 +1,13 @@
+# The most basic form of data verification. Write the device randomly
+# in 4K chunks, then read it back and verify the contents.
+[Sequentia_read(multiple_IOs)]
+rw=read
+bs=128k
+iodepth=32
+direct=0
+thread=1
+filename=D:
+time_based
+name=Sequential_read(multiple_IOs)
+size=2g
+runtime=1200

@@ -1,0 +1,18 @@
+# The most basic form of data verification. Write the device randomly
+# in 4K chunks, then read it back and verify the contents.
+[Verify_test(multiple_IO)]
+rw=randwrite
+iodepth=1
+bsrange=512-128k
+thread=1
+time_based
+verify_pattern=0x12345678
+verify=crc32
+verify_fatal=1
+verify_dump=1
+verify_backlog=1
+filename=D:
+name=Verify_test(single_IO)
+size=1g
+runtime=1200
+direct=0
